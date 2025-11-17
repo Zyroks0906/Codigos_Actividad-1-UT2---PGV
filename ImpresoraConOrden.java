@@ -115,7 +115,7 @@ public class ImpresorasConOrden {
     /**
      * Método principal
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         System.out.println("=================================================");
         System.out.println("ESCENARIO 2: CON ORDEN ESTRICTO");
         System.out.println("3 impresoras B/N | 2 impresoras COLOR");
@@ -138,6 +138,7 @@ public class ImpresorasConOrden {
         // Iniciar todos los hilos
         for (Usuario usuario : usuarios) {
             usuario.start();
+            usuario.sleep(100);
         }
         
         // Esperar a que todos terminen
